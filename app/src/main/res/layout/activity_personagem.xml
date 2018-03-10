@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.logonrm.configuracaopersonagem.PersonagemActivity">
+
+    <RelativeLayout
+        android:id="@+id/cabecalho"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--SP PARA FONTES-->
+        <!--DP para Imagens, elementos do label e etc-->
+        <!--CRTL+ALT+L indenta o codigo todo-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="@string/label_titulo"
+            android:textColor="#666"
+            android:textSize="18sp"
+            android:textStyle="bold|italic" />
+
+    </RelativeLayout>
+
+    <!--ScrollView so aceita um elemento (Relative,constrain,Linear Layout) dentro dele-->
+    <!--Linear Layout - um abaixo do outro ou um ao lado do outro -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rodape"
+        android:layout_below="@+id/cabecalho">
+        <!--android:padding="16dp"- todos meus elementos dentro do linear layout vao ter padding-->
+        <LinearLayout
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_nome" />
+
+            <EditText
+                android:id="@+id/etNome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <!--Atribuindo Id @+id-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_sexo" />
+
+            <!--Orientation vai fazer o flaot left deixar um elemento ao lado do outro-->
+            <!--android:weightSum="3" responsavel por dizer quantos elementos teremos dentro do grupo-->
+            <RadioGroup
+                android:id="@+id/rgSexo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RadioButton
+                    android:id="@+id/rbMasculino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/label_masculino" />
+                <!--weight faz eu atribuir peso e assim deixar os radioButton um ao ladro do outro-->
+                <!--android:layout_weight="1" SE COLCOAR 0.5 EU CONSEGUIREI PQ ELE VAI DE 0 A 1 E DEVO DIVIDIR
+                COM OS ELEMENTOS QUE QUERO-->
+                <RadioButton
+                    android:id="@+id/rbFeminino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/label_feminino" />
+
+            </RadioGroup>
+            <!--QUANDO USAR O AUTOFECHAMENTO - PARA ELEMENTOS QUE NAO VOU COLCOAR NADA DENTRO DELE-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_classe" />
+            <!--VAI CAIR SPINNER NA PROVA COM CLASSES DE FUTEBOL QUE DEVEMOS FAZER NO STRING-->
+            <!--Entries é usado para puxar o meu XML de Array-->
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/classes"
+                android:id="@+id/spClasses"/>
+
+            <!--android:layout_gravity="center"/> o layout é usado pois ele vai pegar
+            o centro de todo o layout-->
+            <ImageView
+                android:id="@+id/ivClasse"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_forca"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:gravity="right"/>
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sbForca" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_criar"
+                android:id="@+id/btCriar"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!--Gravity alinha meus elementos ao meio-->
+    <!--Match-parent ocupa todo o espaco-->
+    <!--wrap_content ele ocupa de acordo com os elementos que esta ao redor deles-->
+
+    <RelativeLayout
+        android:id="@+id/rodape"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="@string/label_rodape" />
+    </RelativeLayout>
+</RelativeLayout>
+
+

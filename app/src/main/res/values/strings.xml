@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ConfiguracaoPersonagem</string>
+    <string name="label_titulo">Crie Seu Personagem</string>
+    <string name="label_nome">Nome do Personagem</string>
+    <string name="label_sexo">Sexo</string>
+    <string name="label_masculino">É menino</string>
+    <string name="label_feminino">É menina</string>
+    <string name="label_rodape">Desenvolvido Por Kaique Tavares</string>
+    <string name="label_classe">Classe</string>
+    <string name="anao">Anão</string>
+    <string name="elfo">Elfo</string>
+    <string name="orc">Orc</string>
+    <string name="mago">Mago</string>
+    <string name="guerreiro">Guerreiro</string>
+    <string name="label_forca">Força</string>
+    <string name="label_criar">Criar</string>
+</resources>
