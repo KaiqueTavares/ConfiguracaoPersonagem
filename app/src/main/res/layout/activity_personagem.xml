@@ -100,7 +100,8 @@
                 android:id="@+id/ivClasse"
                 android:layout_width="96dp"
                 android:layout_height="96dp"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/anao" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -111,11 +112,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="0"
+                android:id="@+id/tvForca"
                 android:gravity="right"/>
 
+            <!--android:max="5" estou delimitando a minha força maxima-->
             <SeekBar
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:max="5"
                 android:id="@+id/sbForca" />
 
             <Button
